@@ -13,12 +13,10 @@ const TestimonialsPage = () => {
     <MDBContainer>
       <section className="team-section text-center my-5">
         <h2 className="h1-responsive font-weight-bold my-5">
-          Testimonials v.3
+          Testimonials
         </h2>
         <p className="dark-grey-text w-responsive mx-auto mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-          amet numquam iure provident voluptate esse quasi, veritatis totam
-          voluptas nostrum quisquam eum porro a pariatur veniam.
+          We let our work speak for us so hear from our partners!
         </p>
 
         <MDBRow className="text-center">
@@ -34,7 +32,7 @@ const TestimonialsPage = () => {
               <h4 className="font-weight-bold dark-grey-text mt-4">
                 Anna Deynah
               </h4>
-              <h6 className="font-weight-bold blue-text my-3">Web Designer</h6>
+              <h6 className="font-weight-bold blue-text my-3">Tech Reviewer</h6>
               <p className="font-weight-normal dark-grey-text">
                 <MDBIcon className="fa fa-quote-left pr-2" />
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
@@ -60,7 +58,7 @@ const TestimonialsPage = () => {
                 />
               </MDBAvatar>
               <h4 className="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-              <h6 className="font-weight-bold blue-text my-3">Web Developer</h6>
+              <h6 className="font-weight-bold blue-text my-3">CMO, Alpha.AI</h6>
               <p className="font-weight-normal dark-grey-text">
                 <MDBIcon className="fa fa-quote-left pr-2" />
                 Ut enim ad minima veniam, quis nostrum exercitationem ullam
@@ -87,7 +85,7 @@ const TestimonialsPage = () => {
               <h4 className="font-weight-bold dark-grey-text mt-4">
                 Maria Kate
               </h4>
-              <h6 className="font-weight-bold blue-text my-3">Photographer</h6>
+              <h6 className="font-weight-bold blue-text my-3">Youtuber</h6>
               <p className="font-weight-normal dark-grey-text">
                 <MDBIcon className="fa fa-quote-left pr-2" />
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui

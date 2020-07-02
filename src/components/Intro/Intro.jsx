@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -15,50 +15,63 @@ import {
   MDBBtn,
   MDBView,
   MDBContainer,
-} from "mdbreact";
-import "./Intro.css";
+  MDBIcon
+} from 'mdbreact';
+import './Intro.css';
 
-class MinimalisticIntro extends React.Component {
+class CallToActionIntro extends React.Component {
   state = {
-    collapsed: false,
+    collapsed: false
   };
 
   handleTogglerClick = () => {
     const { collapsed } = this.state;
-
     this.setState({
-      collapsed: !collapsed,
+      collapsed: !collapsed
     });
   };
 
+  componentDidMount() {
+    document.querySelector('nav').style.height = '65px';
+  }
+
+  componentWillUnmount() {
+    document.querySelector('nav').style.height = 'auto';
+  }
+
   render() {
+    const { collapsed } = this.state;
+    const navStyle = { marginTop: '4rem' };
+    const overlay = (
+      <div
+        id='sidenav-overlay'
+        style={{ backgroundColor: 'transparent' }}
+        onClick={this.handleTogglerClick}
+      />
+    );
     return (
-      <div id="minimalistintro">
-        <MDBView src="https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg">
-          <MDBMask className="rgba-black-light" />
+      <div id='caltoaction'>
+        
+        <MDBView src='https://mdbootstrap.com/img/Photos/Others/gradient2.png'>
+          <MDBMask className='rgba-purple-slight ' />
           <MDBContainer
-            className="d-flex justify-content-center align-items-center"
-            style={{ height: "100%", width: "100%", paddingTop: "17rem" }}
+            style={{ height: '100%', width: '100%', paddingTop: '14rem' }}
+            className='d-flex justify-content-center align-items-center'
           >
             <MDBRow>
-              <MDBCol md="12" className="mb-4 white-text text-center">
-                <h1 className="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 ">
-                  Minimalist intro
+              <MDBCol md='12' className='mb-4 text-center'>
+                <h1 className='display-4 font-weight-bold mb-0 pt-md-5 pt-5'>
+                  Influencer XYZ
                 </h1>
-                <hr className="hr-light my-4" />
-                <h5 className="text-uppercase mb-4 white-text ">
-                  <strong>Photography & design</strong>
+                <h5 className='pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5'>
+                Find the right collaborator in 4 easy steps!
                 </h5>
-                <MDBNavLink to="/influencers">
-                  <MDBBtn outline color="white">
-                    portfolio
-                  </MDBBtn>
-                </MDBNavLink>
-                <MDBNavLink to="/brands">
-                  <MDBBtn outline color="white">
-                    About me
-                  </MDBBtn>
-                </MDBNavLink>
+                <MDBBtn rounded className='btn-purple'>
+                  <MDBIcon icon='user' className='mr-2' /> For Brands
+                </MDBBtn>
+                <MDBBtn outline color='purple' rounded>
+                  <MDBIcon icon='book' className='mr-2' /> For Influencers
+                </MDBBtn>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
@@ -68,4 +81,4 @@ class MinimalisticIntro extends React.Component {
   }
 }
 
-export default MinimalisticIntro;
+export default CallToActionIntro;

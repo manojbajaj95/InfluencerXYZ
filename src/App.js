@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import MinimalisticIntro from "./components/Intro/Intro";
 import FeaturesPage from "./components/Features/Features";
+import FeaturesPage2 from "./components/Features_2/For_influencer";
 import { MDBContainer } from "mdbreact";
 import Navbar from "./components/Navbar/navbar";
 import TestimonialsPage from "./components/Testimonials/testimonial";
