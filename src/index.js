@@ -6,7 +6,7 @@ import "mdbreact/dist/css/mdb.css";
 import "./index.css";
 import App from "./App";
 import * as firebase from "firebase/app";
-import "firebase/analytics"
+import "firebase/analytics";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,9 +26,10 @@ var firebaseConfig = {
   storageBucket: "influencerxyz-123.appspot.com",
   messagingSenderId: "779710022421",
   appId: "1:779710022421:web:4ca1f0393b51f5d3989f1c",
-  measurementId: "G-EE8G03BT73"
+  measurementId: "G-EE8G03BT73",
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
