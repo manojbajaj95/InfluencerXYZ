@@ -1,106 +1,86 @@
-import React from "react";
+import React from 'react';
 import {
   MDBContainer,
-  MDBRow,
-  MDBCol,
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
   MDBTestimonial,
   MDBAvatar,
-  MDBIcon,
-} from "mdbreact";
+  MDBIcon
+} from 'mdbreact';
 
 const TestimonialsPage = () => {
   return (
     <MDBContainer>
-      <section className="team-section text-center my-5">
-        <h2 className="h1-responsive font-weight-bold my-5">
-          Testimonials
-        </h2>
-        <p className="dark-grey-text w-responsive mx-auto mb-5">
-          We let our work speak for us so hear from our partners!
-        </p>
+      <section className='text-center my-5'>
+        <h2 className='h1-responsive font-weight-bold my-5'>Testimonials</h2>
 
-        <MDBRow className="text-center">
-          <MDBCol md="4" className="mb-md-0 mb-5">
-            <MDBTestimonial>
-              <MDBAvatar className="mx-auto">
-                <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
-                  alt=""
-                  className="rounded-circle z-depth-1 img-fluid"
-                />
-              </MDBAvatar>
-              <h4 className="font-weight-bold dark-grey-text mt-4">
-                Anna Deynah
-              </h4>
-              <h6 className="font-weight-bold blue-text my-3">Tech Reviewer</h6>
-              <p className="font-weight-normal dark-grey-text">
-                <MDBIcon className="fa fa-quote-left pr-2" />
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                eos id officiis hic tenetur quae quaerat ad velit ab hic
-                tenetur.
-              </p>
-              <div className="orange-text">
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon far icon="star-half" />
-              </div>
-            </MDBTestimonial>
-          </MDBCol>
-          <MDBCol md="4" className="mb-md-0 mb-5">
-            <MDBTestimonial>
-              <MDBAvatar className="mx-auto">
-                <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg"
-                  alt=""
-                  className="rounded-circle z-depth-1 img-fluid"
-                />
-              </MDBAvatar>
-              <h4 className="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-              <h6 className="font-weight-bold blue-text my-3">CMO, Alpha.AI</h6>
-              <p className="font-weight-normal dark-grey-text">
-                <MDBIcon className="fa fa-quote-left pr-2" />
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                corporis suscipit laboriosam, nisi ut aliquid commodi.
-              </p>
-              <div className="orange-text">
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-              </div>
-            </MDBTestimonial>
-          </MDBCol>
-          <MDBCol md="4">
-            <MDBTestimonial>
-              <MDBAvatar className="mx-auto">
-                <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-                  alt=""
-                  className="rounded-circle z-depth-1 img-fluid"
-                />
-              </MDBAvatar>
-              <h4 className="font-weight-bold dark-grey-text mt-4">
-                Maria Kate
-              </h4>
-              <h6 className="font-weight-bold blue-text my-3">Youtuber</h6>
-              <p className="font-weight-normal dark-grey-text">
-                <MDBIcon className="fa fa-quote-left pr-2" />
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti.
-              </p>
-              <div className="orange-text">
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon icon="star" />
-                <MDBIcon far icon="star" />
-              </div>
-            </MDBTestimonial>
-          </MDBCol>
-        </MDBRow>
+        <MDBCarousel
+          activeItem={1}
+          length={3}
+          testimonial
+          interval={false}
+          showIndicators={false}
+          className='no-flex'
+        >
+          <MDBCarouselInner>
+            <MDBCarouselItem itemId='1'>
+              <MDBTestimonial>
+                <MDBAvatar className='mx-auto mb-4'>
+                 
+                </MDBAvatar>
+                <p>
+                  <MDBIcon icon='quote-left' /> Insightful data tracking methods. Real time tracking is a game changer. Highly recommend the platform to all brands out there!
+                </p>
+                <h4 className='font-weight-bold'>Anurag Dani</h4>
+                <h6 className='font-weight-bold my-3'>Co-Founder, AroLeap</h6>
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon far icon='star-half' className='blue-text' />
+              </MDBTestimonial>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId='2'>
+              <MDBTestimonial>
+                <MDBAvatar className='mx-auto mb-4'>
+                  
+                </MDBAvatar>
+                <p>
+                  <MDBIcon icon='quote-left' /> User friendly interface, just create a profile and instantly start getting matches for collaborations. Moreover, all brand management will be done by these folks and you can focus on content creation!
+                </p>
+                <h4 className='font-weight-bold'>Satyanarayan</h4>
+                <h6 className='font-weight-bold my-3'>
+                  Founder, Foodle
+                </h6>
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+              </MDBTestimonial>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId='3'>
+              <MDBTestimonial>
+                <MDBAvatar className='mx-auto mb-4'>
+                  
+                </MDBAvatar>
+                <p>
+                  <MDBIcon icon='quote-left' /> Helped us kickstart our influencer campaigns with ease. Fit our budget and delivered our targets. Strongly recommend it to brands to improve their digital presence.
+                </p>
+                <h4 className='font-weight-bold'>Manoj Bajaj</h4>
+                <h6 className='font-weight-bold my-3'>
+                  Co-Founder, Poqet
+                </h6>
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon icon='star' className='blue-text' />
+                <MDBIcon far icon='star' className='blue-text' />
+              </MDBTestimonial>
+            </MDBCarouselItem>
+          </MDBCarouselInner>
+        </MDBCarousel>
       </section>
     </MDBContainer>
   );

@@ -1,15 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
-import MinimalisticIntro from "./components/Intro/Intro";
-import FeaturesPage from "./components/Features/Features";
-import FeaturesPage2 from "./components/Features_2/For_influencer";
-import { MDBContainer } from "mdbreact";
-import Navbar from "./components/Navbar/navbar";
-import TestimonialsPage from "./components/Testimonials/testimonial";
-import FooterPagePro from "./components/Footer/footer";
-import Home from "./components/Home/Home";
+
+import Home from "./components/Home/HomeDefault";
+import Influencers from "./components/Home/HomeInfluencers";
+import Brands from "./components/Home/HomeBrands";
+import FormPage from "./components/Registration/RegistrationInfluencer";
+
 
 function App() {
   return (
@@ -17,8 +14,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/influencers" component={FeaturesPage} />
-          <Route exact path="/brands" component={FeaturesPage} />
+          <Route exact path="/influencers" component={Influencers} />
+          <Route exact path="/form" component={FormPage} />
+          <Route exact path="/brands" component={Brands} />
         </Switch>
       </BrowserRouter>
     </div>

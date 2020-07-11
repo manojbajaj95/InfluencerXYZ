@@ -15,6 +15,7 @@ import {
   MDBBtn,
   MDBView,
   MDBContainer,
+  MDBSmoothScroll,
 } from "mdbreact";
 
 class Navbar extends React.Component {
@@ -49,8 +50,7 @@ class Navbar extends React.Component {
       />
     );
     return (
-      <Router>
-        <div>
+      <div>
           <MDBNavbar
             color="primary-color"
             style={navStyle}
@@ -62,19 +62,19 @@ class Navbar extends React.Component {
           >
             <MDBContainer>
               <MDBNavbarBrand>
-                <strong className="white-text">MDB</strong>
+                <strong className="white-text">Influence Away</strong>
               </MDBNavbarBrand>
               <MDBNavbarToggler onClick={this.handleTogglerClick} />
               <MDBCollapse isOpen={collapsed} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                    <MDBNavLink to="#!">Home</MDBNavLink>
+                    <MDBNavLink to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="#!">Link</MDBNavLink>
+                    <MDBSmoothScroll to="features" >Features</MDBSmoothScroll>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="#!">Profile</MDBNavLink>
+                    <MDBSmoothScroll to="testimonial" >Testimonials</MDBSmoothScroll>
                   </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav right>
@@ -96,7 +96,6 @@ class Navbar extends React.Component {
           </MDBNavbar>
           {collapsed && overlay}
         </div>
-      </Router>
     );
   }
 }

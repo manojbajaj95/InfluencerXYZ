@@ -1,29 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import MinimalisticIntro from "../Intro/Intro";
-import FeaturesPage from "../Features/Features";
-import FeaturesPage2 from "../Features_2/For_influencer";
+import FeaturesPage2 from "../Features/FeaturesInfluencer";
 import { MDBContainer } from "mdbreact";
 import Navbar from "../Navbar/navbar";
 import TestimonialsPage from "../Testimonials/testimonial";
 import FooterPagePro from "../Footer/footer";
+import IntroInfluencer from "../Intro/IntroInfluencers";
+import Partners from "../Partners/partners";
 
-function Home() {
+function Influencers() {
   return (
     <div className="App">
-      <Router>
         <Navbar />
-        <MinimalisticIntro />
+        <IntroInfluencer/>
         <MDBContainer>
-          <FeaturesPage />
           <FeaturesPage2 />
-          <hr />
           <TestimonialsPage />
         </MDBContainer>
+        <Partners/>
         <FooterPagePro />
-      </Router>
+      
     </div>
   );
 }
 
-export default Home;
+export default Influencers;

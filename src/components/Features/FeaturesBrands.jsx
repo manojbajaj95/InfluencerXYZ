@@ -1,13 +1,13 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 
-const FeaturesPage = () => {
+const FeaturesBrands = () => {
   return (
-    <section className="my-5">
+    <section className="my-5" id="features">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         For Brands
       </h2>
-      <p className="lead grey-text w-responsive text-center mx-auto mb-5">
+      <p className="lead black-text w-responsive text-center mx-auto mb-5">
         We help you find the perfect influencer for your campaign to effectively convey your message to the right target audience!
       </p>
 
@@ -15,7 +15,7 @@ const FeaturesPage = () => {
         <MDBCol lg="5" className="text-center text-lg-left">
           <img
             className="img-fluid"
-            src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg"
+            src="images/Brand_features_page.png"
             alt=""
           />
         </MDBCol>
@@ -26,7 +26,7 @@ const FeaturesPage = () => {
             </MDBCol>
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Sign UP</h5>
-              <p className="grey-text">
+              <p className="black-text">
             Share details about your campaign like target group, type of campaign, budget and expected reach. We select influencers that perfectly fit your requirements!
               </p>
             </MDBCol>
@@ -37,8 +37,8 @@ const FeaturesPage = () => {
             </MDBCol>
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Analytics</h5>
-              <p className="grey-text">
-              View real time funnel data and see the performance of your campaign. We will customize your dashboard to display the metrics that matter to you!
+              <p className="black-text">
+              View real time multi-platform insights of your campaign. Customize your dashboard to display the metrics that matter to you!
               </p>
             </MDBCol>
           </MDBRow>
@@ -48,8 +48,8 @@ const FeaturesPage = () => {
             </MDBCol>
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Hassle Free</h5>
-              <p className="grey-text">
-                Leave the negotiation, coordination and operational headache to us. Sit back and relax as we deliver your targets!
+              <p className="black-text">
+                Leave the coordination and operational headache to us. Sit back and relax as we deliver your targets!
               </p>
             </MDBCol>
           </MDBRow>
@@ -59,4 +59,4 @@ const FeaturesPage = () => {
   );
 };
 
-export default FeaturesPage;
+export default FeaturesBrands;
