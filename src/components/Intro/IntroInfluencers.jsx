@@ -124,32 +124,28 @@ class IntroInfluencers extends React.Component {
               <MDBAnimation
                 type="fadeInLeft"
                 delay=".3s"
-                className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5"
+                className=" text-center text-md-left col-md-6 mt-xl-5 mb-5"
               >
-                <h1 className="h1-responsive font-weight-bold">
+                <h1 className="white-text h1-responsive font-weight-bold">
                   Sign up right now!
                 </h1>
                 <hr className="hr-light" />
-                <h6 className="mb-4">
+                <h5 className=" white-text mb-4">
                   Create your profile in seconds and get visibility from
                   hundreds of partner brands. Finding collaborations has never
                   been easier!
-                </h6>
-                <MDBBtn outline color="white">
-                  Learn More
-                </MDBBtn>
+                </h5>
               </MDBAnimation>
 
               <MDBCol md="6" xl="5" className="mb-4">
                 <MDBAnimation type="fadeInRight" delay=".3s">
                   <MDBCard id="classic-card">
-                    <MDBCardBody className="white-text text-left">
-                      <h3 className="text-center">
+                    <MDBCardBody className=" text-left">
+                      <h3 className="white-text text-center">
                         <MDBIcon icon="user" /> Register:
                       </h3>
                       <hr className="hr-light" />
                       <MDBInput
-                        className="white-text"
                         iconClass="white-text"
                         label="Your email"
                         icon="envelope"
@@ -158,7 +154,6 @@ class IntroInfluencers extends React.Component {
                         onChange={this.onChange}
                       />
                       <MDBInput
-                        className="white-text"
                         iconClass="white-text"
                         label="Your password"
                         icon="lock"
@@ -186,4 +181,3 @@ class IntroInfluencers extends React.Component {
 }
 
 export default withRouter(IntroInfluencers);
-

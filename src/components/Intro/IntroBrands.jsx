@@ -82,9 +82,6 @@ class IntroBrands extends React.Component {
                   Built to help you discover & collaborate with relevant
                   inlfuencers & content creaters
                 </h4>
-                <MDBBtn outline color="white">
-                  Learn More
-                </MDBBtn>
               </div>
               <MDBCol md="6" xl="5" className="mb-4">
                 <MDBCard className="dark-grey-text text-left">
@@ -121,11 +118,6 @@ class IntroBrands extends React.Component {
                         Send
                       </MDBBtn>
                       <hr />
-                      <MDBInput
-                        type="checkbox"
-                        id="checkbox"
-                        label="Subscribe me to the newsletter"
-                      />
                     </div>
                   </MDBCardBody>
                 </MDBCard>
@@ -139,4 +131,3 @@ class IntroBrands extends React.Component {
 }
 
 export default IntroBrands;
-

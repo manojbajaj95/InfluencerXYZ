@@ -4,11 +4,9 @@ import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 const FeaturesBrands = () => {
   return (
     <section className="my-5" id="features">
-      <h2 className="h1-responsive font-weight-bold text-center my-5">
-        For Brands
-      </h2>
       <p className="lead black-text w-responsive text-center mx-auto mb-5">
-        We help you find the perfect influencer for your campaign to effectively convey your message to the right target audience!
+        We help you find the perfect influencer for your campaign to effectively
+        convey your message to the right target audience!
       </p>
 
       <MDBRow>
@@ -27,7 +25,9 @@ const FeaturesBrands = () => {
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Sign UP</h5>
               <p className="black-text">
-            Share details about your campaign like target group, type of campaign, budget and expected reach. We select influencers that perfectly fit your requirements!
+                Share details about your campaign like target group, type of
+                campaign, budget and expected reach. We select influencers that
+                perfectly fit your requirements!
               </p>
             </MDBCol>
           </MDBRow>
@@ -38,7 +38,9 @@ const FeaturesBrands = () => {
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Analytics</h5>
               <p className="black-text">
-              View real time multi-platform insights of your campaign. Customize your dashboard to display the metrics that matter to you!
+                View real time multi-platform insights of your campaign.
+                Customize your dashboard to display the metrics that matter to
+                you!
               </p>
             </MDBCol>
           </MDBRow>
@@ -49,7 +51,8 @@ const FeaturesBrands = () => {
             <MDBCol xl="10" md="11" size="10">
               <h5 className="font-weight-bold mb-3">Hassle Free</h5>
               <p className="black-text">
-                Leave the coordination and operational headache to us. Sit back and relax as we deliver your targets!
+                Leave the coordination and operational headache to us. Sit back
+                and relax as we deliver your targets!
               </p>
             </MDBCol>
           </MDBRow>

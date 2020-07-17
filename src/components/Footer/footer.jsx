@@ -33,7 +33,7 @@ const FooterPagePro = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.InfluencerXYZ.in"> InfluencerXYZ.in </a>
+          <a href="https://www.Influenceaway.in"> Influenceaway.in </a>
         </MDBContainer>
       </div>
     </MDBFooter>

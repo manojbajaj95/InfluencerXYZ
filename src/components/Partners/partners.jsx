@@ -10,22 +10,19 @@ const Partners = () => {
         <MDBCarouselInner>
           <MDBRow>
             <MDBCarouselItem itemId="1">
-              <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-              <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-              <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-              <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
+              <MDBCol sm="4" md="4" lg="4"><img src="/images/PoqetLogo.webp" width="150"/></MDBCol>
+              <MDBCol sm="4" md="4" lg="4"><img src="/images/AroLeap.png" width="150"/></MDBCol>
+              <MDBCol sm="4" md="4" lg="4"><img src="/images/Foodle.PNG" width="150"/></MDBCol>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/LittlePunjab.PNG" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/RetakeEntertainement.jpg" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/AcuverConsulting.png" width="150"/></MDBCol>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
-            <MDBCol sm="3" md="3" lg="3"><img src="/images/logo.png" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/BetterHalf.png" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/GreenBubbles.png" width="150"/></MDBCol>
+            <MDBCol sm="4" md="4" lg="4"><img src="/images/Tinkerly.png" width="150"/></MDBCol>
             </MDBCarouselItem>
           </MDBRow>
         </MDBCarouselInner>

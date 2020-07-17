@@ -1,0 +1,27 @@
+// Your custom skin
+// Skins
+$skins: () !default;
+$skins: map-merge(
+  (
+    "custom-blue": (
+      "skin-primary-color": #6391f5,
+      "skin-navbar": #006494,
+      "skin-footer-color": #006494,
+      "skin-flat": #ff0000,
+      "skin-accent": #13293d,
+      "skin-sidenav-item": #0000ff,
+      "skin-sidenav-item-hover": #ffff00,
+      "skin-gradient-start": #176897,
+      "skin-gradient-end": #ffffff,
+      "skin-mask-slight": #247ba0,
+      "skin-mask-light": #006494,
+      "skin-mask-strong": #13293d,
+      "skin-sn-child": #006494,
+      "skin-btn-primary": #247ba0,
+      "skin-btn-secondary": #00ffff,
+      "skin-btn-default": #247ba0,
+      "skin-text": #fff,
+    ),
+  ),
+  $skins
+);
