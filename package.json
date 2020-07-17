@@ -7,17 +7,19 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.15.5",
+    "google-map-react": "^1.1.7",
     "mdbreact": "git+https://oauth2:4rbAYV28os1fDM7fJBMW@git.mdbootstrap.com/mdb/react/re-pro.git",
     "node-sass": "^4.14.1",
     "particlesjs": "^2.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-snapshot": "^1.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "react-scripts build && firebase deploy --only hosting"

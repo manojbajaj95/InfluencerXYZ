@@ -6,7 +6,7 @@ import Home from "./components/Home/HomeDefault";
 import Influencers from "./components/Home/HomeInfluencers";
 import Brands from "./components/Home/HomeBrands";
 import FormPage from "./components/Registration/RegistrationInfluencer";
-
+import Dashboard from "./components/Dashboard/DashboardPage";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/influencers" component={Influencers} />
           <Route exact path="/form" component={FormPage} />
           <Route exact path="/brands" component={Brands} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </BrowserRouter>
     </div>
