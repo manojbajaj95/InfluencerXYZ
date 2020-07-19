@@ -1,0 +1,53 @@
+{
+  "uid": "asdfg",
+  "name": "Ipsha",
+  "email": "ipsha@abc.com",
+  "country": "IN",
+  "phone": 9876543210,
+  "social": {
+    "instagram": {
+      "handle": "ipsshagram_",
+      "followers": 14000,
+      "posts": 100,
+      "reach": 458,
+      "impressions": 700,
+      "likes": 50,
+      "comments": 6,
+      "engagement": 6
+    },
+    "twitter": {
+      "handle": "twitty",
+      "followers": 1400,
+      "posts": 100,
+      "reach": 458,
+      "impression": 700,
+      "likes": 50,
+      "comments": 6,
+      "engagement": 6
+    }
+  },
+  "campaigns": [
+    {
+      "id": "axds",
+      "reach": 200,
+      "impression": 250,
+      "engagement": 12,
+      "clicks": 60,
+      "conversions": 10,
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2
+    },
+    {
+      "id": "axdq",
+      "reach": 200,
+      "impression": 250,
+      "engagement": 12,
+      "clicks": 60,
+      "conversions": 10,
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2
+    }
+  ]
+}

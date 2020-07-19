@@ -44,10 +44,10 @@ class IntroDefault extends React.Component {
                     Brindging the gap between brands and influencers
                   </h4>
                   <h5>Influencer Search + Impact Analysis</h5>
-                  <MDBNavLink to="/brands">
+                  <MDBNavLink to="/brands/intro">
                     <MDBBtn color="white">For Brands</MDBBtn>
                   </MDBNavLink>
-                  <MDBNavLink to="/influencers">
+                  <MDBNavLink to="/influencers/intro">
                     <MDBBtn outline color="white">
                       For Influencers
                     </MDBBtn>

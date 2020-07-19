@@ -13,7 +13,7 @@ const FeaturesInfluencer = () => {
         <MDBCol lg="5" className="text-center text-lg-left">
           <img
             className="img-fluid"
-            src="images/Influencer_features_page.png"
+            src="/images/Influencer_features_page.png"
             alt=""
           />
         </MDBCol>

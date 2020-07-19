@@ -1,0 +1,39 @@
+{
+  "uid": "b12f",
+  "name": "Johnson Baby powder",
+  "contact": [
+    {
+      "name": "Mr. Sarvapalli",
+      "phone": 9321456780,
+      "email": "random@johnson.com"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "axds",
+      "name": "New baby powder",
+      "target": {
+        "platform": "youtube",
+        "minage": 25,
+        "maxage": 25,
+        "geography": "metros",
+        "sex": " male"
+      },
+      "category": "wellness",
+      "purpose": "awareness",
+      "budget": 50000,
+      "startdate": "2020-07-20",
+      "enddate": "2020-08-20",
+      "goal": {
+        "reach": 200,
+        "impression": 250,
+        "engagement": 12,
+        "clicks": 60,
+        "conversions": 10
+      },
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2
+    }
+  ]
+}

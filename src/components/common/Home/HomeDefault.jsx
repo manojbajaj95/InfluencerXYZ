@@ -5,7 +5,7 @@ import AppPage from "../Intro/IntroDefault";
 function Home() {
   return (
     <div className="App">
-        <AppPage />
+      <AppPage />
     </div>
   );
 }

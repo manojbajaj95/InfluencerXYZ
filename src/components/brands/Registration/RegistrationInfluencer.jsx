@@ -1,4 +1,5 @@
 import React, { useState, Component } from "react";
+import { withRouter } from "react-router-dom";
 import {
   MDBContainer,
   MDBRow,
@@ -17,13 +18,13 @@ import "firebase/auth";
 class FormPage extends Component {
   state = {
     active: 1,
-
     name: "",
     mobile: null,
     youtube: "",
     instagram: "",
     twitter: "",
     facebook: "",
+    submit: false,
   };
 
   setActive = (n) => {
@@ -33,16 +34,43 @@ class FormPage extends Component {
     });
   };
 
+  componentDidMount = () => {
+    var db = firebase.firestore();
+    console.log(firebase.auth().currentUser.uid);
+    db.collection("users")
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log("Exists");
+          this.setState({
+            ...doc.data(),
+          });
+          if (doc.data().submit) {
+            this.props.history.push("/profile");
+          }
+        } else {
+          // Probably a new user or db connectivity down
+          // ignore
+        }
+      });
+  };
+
   onSubmit = () => {
     var db = firebase.firestore();
+    alert(
+      "Thanks for registration. We will verify your application and revert back"
+    );
     db.collection("users")
-      .add({ ...this.state, uid: firebase.auth().currentUser.uid })
-      .then(function (docRef) {
-        alert(
-          "Thanks for registration. We will verify your application and revert back"
-        );
+      .doc(firebase.auth().currentUser.uid)
+      .set({
+        ...this.state,
+        uid: firebase.auth().currentUser.uid,
+        submit: true,
+        verified: false,
       })
-      .catch(function (error) {
+      .then(this.props.history.push("/dashboard"))
+      .catch(function () {
         alert("Registration failed. Hope I don't get fired!!");
       });
   };
@@ -529,4 +557,4 @@ class FormPage extends Component {
   }
 }
 
-export default FormPage;
+export default withRouter(FormPage);

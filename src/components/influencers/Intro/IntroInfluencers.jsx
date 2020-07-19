@@ -13,9 +13,9 @@ import {
   MDBInput,
   MDBAnimation,
 } from "mdbreact";
+import { compose } from "recompose";
 import "./IntroInfluencers.css";
-import * as firebase from "firebase/app";
-import "firebase/auth";
+import { withFirebase } from "../../common/Firebase";
 
 class IntroInfluencers extends React.Component {
   state = {
@@ -50,68 +50,19 @@ class IntroInfluencers extends React.Component {
   };
 
   onSubmit = () => {
-    console.log(this.state.form);
-    firebase
-      .auth()
-      .fetchSignInMethodsForEmail(this.state.form.email)
-      .then((e) => {
-        if (e.length) {
-          firebase
-            .auth()
-            .signInWithEmailAndPassword(
-              this.state.form.email,
-              this.state.form.password
-            )
-            .then(() => {
-              alert("Sign In success");
-              this.props.history.push("/form");
-            })
-            .catch(function (error) {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              if (errorCode === "auth/wrong-password") {
-                alert("Wrong password.");
-              } else {
-                alert(errorMessage);
-              }
-              console.log(error);
-            });
-        } else {
-          firebase
-            .auth()
-            .createUserWithEmailAndPassword(
-              this.state.form.email,
-              this.state.form.password
-            )
-            .then(() => {
-              alert("Sign up user success");
-              this.props.history.push("/form");
-            })
-            .catch((error) => {
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              if (errorCode == "auth/weak-password") {
-                alert("The password is too weak.");
-              } else {
-                alert(errorMessage);
-              }
-              console.log(error);
-            });
-        }
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        alert(errorMessage);
-        console.log(error);
-      });
-    // If user exists sign In instead
-    // firebase.auth().signInWithEmailAndPassword(email, password);
+    const { email, password } = this.state.form;
+    this.props.firebase.doSignUpOrSignIn(email, password).then((e) => {
+      if (e) this.props.history.push("/influencers/registration");
+      else
+        alert("Failed to sign up. Please try again later or contact support");
+    });
   };
 
   render() {
+    const user = this.props.firebase.auth.currentUser;
+    if (user) {
+      this.props.history.push("/influencers/dashboard");
+    }
     return (
       <div id="classicformpage">
         <MDBView>
@@ -180,4 +131,4 @@ class IntroInfluencers extends React.Component {
   }
 }
 
-export default withRouter(IntroInfluencers);
+export default compose(withFirebase, withRouter)(IntroInfluencers);
