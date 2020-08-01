@@ -12,6 +12,7 @@
     {
       "id": "axds",
       "name": "New baby powder",
+      "brief": "My campaign for selling used condoms",
       "target": {
         "platform": "youtube",
         "minage": 25,
@@ -21,7 +22,6 @@
       },
       "category": "wellness",
       "purpose": "awareness",
-      "budget": 50000,
       "startdate": "2020-07-20",
       "enddate": "2020-08-20",
       "goal": {
@@ -31,9 +31,12 @@
         "clicks": 60,
         "conversions": 10
       },
-      "cpc": 0.5,
-      "cpi": 0.04,
-      "cpv": 2
+      "Cost": {
+        "cpc": 0.5,
+        "cpi": 0.04,
+        "cpv": 2,
+        "budget": 50000
+      }
     }
   ]
 }

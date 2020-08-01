@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -17,6 +16,44 @@ import {
   MDBContainer,
   MDBSmoothScroll,
 } from "mdbreact";
+import { withFirebase } from "../../common/Firebase";
+
+const SignOutLinks = () => {
+  return (
+    <MDBNavbarNav right>
+      <MDBNavItem active>
+        <MDBNavLink to="/">Home</MDBNavLink>
+      </MDBNavItem>
+      <MDBNavItem>
+        <MDBSmoothScroll to="features">Features</MDBSmoothScroll>
+      </MDBNavItem>
+      <MDBNavItem>
+        <MDBSmoothScroll to="testimonial">Testimonials</MDBSmoothScroll>
+      </MDBNavItem>
+    </MDBNavbarNav>
+  );
+};
+
+const SignInLinks = (props) => {
+  return (
+    <MDBNavbarNav right>
+      <MDBNavItem>
+        <MDBNavLink to="/brands/dashboard">Dashboard</MDBNavLink>
+      </MDBNavItem>
+      <MDBNavItem>
+        <MDBNavLink to="/brands/campaign/add">Create</MDBNavLink>
+      </MDBNavItem>
+      <MDBNavItem>
+        <MDBNavLink to="/brands/campaigns">Campaigns</MDBNavLink>
+      </MDBNavItem>
+      <MDBNavItem>
+        <MDBBtn size="sm" onClick={props.logOut}>
+          Log Out
+        </MDBBtn>
+      </MDBNavItem>
+    </MDBNavbarNav>
+  );
+};
 
 class Navbar extends React.Component {
   state = {
@@ -49,6 +86,8 @@ class Navbar extends React.Component {
         onClick={this.handleTogglerClick}
       />
     );
+
+    const user = this.props.firebase.auth.currentUser;
     return (
       <div>
         <MDBNavbar
@@ -66,27 +105,11 @@ class Navbar extends React.Component {
             </MDBNavbarBrand>
             <MDBNavbarToggler onClick={this.handleTogglerClick} />
             <MDBCollapse isOpen={collapsed} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="/">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBSmoothScroll to="features">Features</MDBSmoothScroll>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBSmoothScroll to="testimonial">
-                    Testimonials
-                  </MDBSmoothScroll>
-                </MDBNavItem>
-              </MDBNavbarNav>
-              <MDBNavbarNav right>
-                <MDBNavItem>
-                  <MDBFormInline waves>
-                    <div className="md-form my-0">
-                    </div>
-                  </MDBFormInline>
-                </MDBNavItem>
-              </MDBNavbarNav>
+              {user ? (
+                <SignInLinks logOut={this.props.firebase.doSignOut} />
+              ) : (
+                <SignOutLinks />
+              )}
             </MDBCollapse>
           </MDBContainer>
         </MDBNavbar>
@@ -96,4 +119,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default withFirebase(Navbar);

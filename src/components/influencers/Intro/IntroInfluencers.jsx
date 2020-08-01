@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import {
   MDBMask,
   MDBRow,
@@ -13,7 +12,6 @@ import {
   MDBInput,
   MDBAnimation,
 } from "mdbreact";
-import { compose } from "recompose";
 import "./IntroInfluencers.css";
 import { withFirebase } from "../../common/Firebase";
 
@@ -52,17 +50,13 @@ class IntroInfluencers extends React.Component {
   onSubmit = () => {
     const { email, password } = this.state.form;
     this.props.firebase.doSignUpOrSignIn(email, password).then((e) => {
-      if (e) this.props.history.push("/influencers/registration");
+      if (e) alert("Sign In success");
       else
         alert("Failed to sign up. Please try again later or contact support");
     });
   };
 
   render() {
-    const user = this.props.firebase.auth.currentUser;
-    if (user) {
-      this.props.history.push("/influencers/dashboard");
-    }
     return (
       <div id="classicformpage">
         <MDBView>
@@ -131,4 +125,4 @@ class IntroInfluencers extends React.Component {
   }
 }
 
-export default compose(withFirebase, withRouter)(IntroInfluencers);
+export default withFirebase(IntroInfluencers);

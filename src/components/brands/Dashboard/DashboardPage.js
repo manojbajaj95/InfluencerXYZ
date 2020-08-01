@@ -65,8 +65,8 @@ const DashboardPage = () => {
 
   return (
     <MDBView className="container-fluid min-vh-100">
-      {false ? (
-        <Loader />
+      {true ? (
+        <h3 className="mt-5 pt-5">Sorry no campaign found</h3>
       ) : (
         <MDBContainer className="mt-5 py-5">
           <MDBRow between className="my-2">

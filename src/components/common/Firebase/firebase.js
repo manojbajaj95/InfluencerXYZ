@@ -50,7 +50,7 @@ class Firebase {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        if (errorCode == "auth/weak-password") {
+        if (errorCode === "auth/weak-password") {
           alert("The password is too weak.");
         } else {
           alert(errorMessage);
@@ -127,7 +127,7 @@ class Firebase {
   getFromDB = async (table, uid) => {
     const result = await this.db
       .collection(table)
-      .where("userId", "==", uid)
+      .where("uid", "==", uid)
       .get()
       .then(function (doc) {
         const list = [];
@@ -144,7 +144,28 @@ class Firebase {
       .catch(function (error) {
         return [];
       });
+    return result;
+  };
 
+  getFromDB = async (table) => {
+    const result = await this.db
+      .collection(table)
+      .get()
+      .then(function (doc) {
+        const list = [];
+        doc.forEach((d) => {
+          if (!d.data().isDeleted) {
+            list.push({
+              ...d.data(),
+              id: d.id,
+            });
+          }
+        });
+        return list;
+      })
+      .catch(function (error) {
+        return [];
+      });
     return result;
   };
 
@@ -176,11 +197,7 @@ class Firebase {
         this.user(authUser.uid)
           .get()
           .then((snapshot) => {
-            // this.doSignOut();
             const dbUser = snapshot.data();
-            // console.log("DB User is")
-            // console.log(dbUser)
-            // merge auth and db user
             authUser = {
               uid: authUser.uid,
               email: authUser.email,

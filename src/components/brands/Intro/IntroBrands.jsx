@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import {
   MDBMask,
   MDBRow,
@@ -11,15 +10,15 @@ import {
   MDBCardBody,
   MDBInput,
 } from "mdbreact";
+import { withFirebase } from "../../common/Firebase";
 import "./IntroBrands.css";
 
 class IntroBrands extends React.Component {
   state = {
     collapseID: "",
     form: {
-      name: null,
       email: null,
-      message: null,
+      password: null,
     },
   };
 
@@ -47,25 +46,19 @@ class IntroBrands extends React.Component {
   };
 
   onSubmit = () => {
-    console.log(this.state.form);
+    const { email, password } = this.state.form;
+    this.props.firebase.doSignUpOrSignIn(email, password).then((e) => {
+      if (e)
+        // Signin/SignUp success
+        alert("Sign In success");
+      else
+        alert("Failed to sign up. Please try again later or contact support");
+    });
   };
 
   render() {
-    const { collapseID } = this.state;
-    const navStyle = { marginTop: "65px" };
-    const overlay = (
-      <div
-        id="sidenav-overlay"
-        style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("navbarCollapse")}
-      />
-    );
     return (
       <div id="contactformpage">
-        <Router>
-          <div>{collapseID && overlay}</div>
-        </Router>
-
         <MDBView>
           <MDBMask overlay="indigo-strong" />
           <MDBContainer
@@ -87,16 +80,9 @@ class IntroBrands extends React.Component {
                 <MDBCard className="dark-grey-text text-left">
                   <MDBCardBody className="z-depth-2">
                     <h3 className="dark-grey-text text-center">
-                      <strong>Register Now:</strong>
+                      <strong>Register Now</strong>
                     </h3>
                     <hr />
-                    <MDBInput
-                      label="Your name"
-                      icon="user"
-                      id="name"
-                      onChange={this.onChange}
-                      value={this.state.form.name}
-                    />
                     <MDBInput
                       label="Your email"
                       icon="envelope"
@@ -105,17 +91,17 @@ class IntroBrands extends React.Component {
                       value={this.state.form.email}
                     />
                     <MDBInput
-                      label="Your message"
-                      icon="pencil-alt"
-                      type="textarea"
-                      rows="3"
-                      id="message"
+                      iconClass="white-text"
+                      label="Your password"
+                      icon="lock"
+                      type="password"
+                      value={this.state.form.password}
+                      id="password"
                       onChange={this.onChange}
-                      value={this.state.form.message}
                     />
                     <div className="text-center mt-3 black-text">
                       <MDBBtn color="indigo" onClick={this.onSubmit}>
-                        Send
+                        Get Started
                       </MDBBtn>
                       <hr />
                     </div>
@@ -130,4 +116,4 @@ class IntroBrands extends React.Component {
   }
 }
 
-export default IntroBrands;
+export default withFirebase(IntroBrands);

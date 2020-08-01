@@ -1,9 +1,10 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
+import { compose } from "recompose";
 import AuthUserContext from "./context";
 import { withFirebase } from "../Firebase";
 
-const withAuthentication = (Component) => {
+const withAuthentication = (type) => (Component) => {
   class WithAuthentication extends React.Component {
     constructor(props) {
       super(props);
@@ -26,6 +27,11 @@ const withAuthentication = (Component) => {
         (authUser) => {
           localStorage.setItem("authUser", JSON.stringify(authUser));
           this.setState({ authUser });
+          if (authUser.submit) {
+            this.props.history.push("/" + type + "/dashboard");
+          } else {
+            this.props.history.push("/" + type + "/registration");
+          }
         },
         () => {
           localStorage.removeItem("authUser");
@@ -47,7 +53,7 @@ const withAuthentication = (Component) => {
     }
   }
 
-  return withFirebase(WithAuthentication);
+  return compose(withRouter, withFirebase)(WithAuthentication);
 };
 
 export default withAuthentication;

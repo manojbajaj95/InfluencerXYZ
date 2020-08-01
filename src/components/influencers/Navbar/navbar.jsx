@@ -39,7 +39,7 @@ const SignInLinks = (props) => {
         <MDBNavLink to="/influencers/profile">Profile</MDBNavLink>
       </MDBNavItem>
       <MDBNavItem>
-        <MDBNavLink to="/influencers/profile">Campaigns</MDBNavLink>
+        <MDBNavLink to="/influencers/campaigns">Campaigns</MDBNavLink>
       </MDBNavItem>
       <MDBNavItem>
         <MDBBtn size="sm" onClick={props.logOut}>
