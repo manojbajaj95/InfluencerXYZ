@@ -95,7 +95,9 @@ class Navbar extends React.Component {
         >
           <MDBContainer>
             <MDBNavbarBrand>
-              <strong className="white-text">Influence Away</strong>
+              <MDBNavLink to="/">
+                <strong className="white-text">Influence Away</strong>
+              </MDBNavLink>
             </MDBNavbarBrand>
             <MDBNavbarToggler onClick={this.handleTogglerClick} />
             <MDBCollapse isOpen={collapsed} navbar>

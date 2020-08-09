@@ -82,7 +82,10 @@ class FormPage extends Component {
     var active = this.state.active;
     const outerContainerStyle = { height: "200px" };
     return (
-      <MDBContainer className="mt-5 text-left">
+      <MDBContainer
+        className="mt-5 py-2 text-left"
+        style={{ "min-height": "100vh" }}
+      >
         <h2 className="text-center font-weight-bold pt-4 pb-5 mb-2">
           <strong>Registration form</strong>
         </h2>

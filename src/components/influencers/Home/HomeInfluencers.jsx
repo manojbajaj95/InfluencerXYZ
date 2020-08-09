@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import FeaturesPage2 from "../Features/FeaturesInfluencer";
+import FeaturesPage from "../Features/FeaturesInfluencer";
 import { MDBContainer } from "mdbreact";
 import TestimonialsPage from "../Testimonials/testimonial";
 import IntroInfluencer from "../Intro/IntroInfluencers";
@@ -11,7 +11,7 @@ function Influencers() {
     <div className="App">
       <IntroInfluencer />
       <MDBContainer>
-        <FeaturesPage2 />
+        <FeaturesPage />
         <TestimonialsPage />
       </MDBContainer>
       <Partners />

@@ -51,6 +51,31 @@ export const sex = [
   },
 ];
 
-export const category = [];
+export const category = [
+  {
+    text: "wellness",
+    value: 0,
+  },
+];
 
-export const purpose = [];
+export const purpose = [
+  {
+    text: "awareness",
+    value: 0,
+  },
+];
+
+export const status = [
+  {
+    text: "past",
+    value: 0,
+  },
+  {
+    text: "ongoing",
+    value: 1,
+  },
+  {
+    text: "upcoming",
+    value: 2,
+  },
+];

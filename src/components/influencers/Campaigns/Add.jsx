@@ -25,26 +25,10 @@ class FormPage extends Component {
 
   componentDidMount = () => {
     const id = this.props.match.params.id;
-    if (id) {
-      this.props.firebase.db
-        .collection("campaigns")
-        .doc(id)
-        .get()
-        .then((doc) => {
-          if (doc.exists) {
-            this.setState({
-              campaign: {
-                ...doc.data(),
-              },
-            });
-          } else {
-            // Probably a new user or db connectivity down
-            // ignore
-          }
-        });
-    }
+    const campaign = this.props.campaigns.fetchAndUpdate(id);
     this.setState({
       loaded: true,
+      campaign,
     });
   };
 
@@ -57,14 +41,20 @@ class FormPage extends Component {
     });
   };
 
-  setDate = (field, value) => {
-    this.setState({
-      [field]: value,
-    });
+  onApply = () => {
+    alert("Your application is submitted");
   };
 
-  getDate = (value) => {
-    return new Date();
+  getEarnings = () => {
+    if (!this.state.loaded) return 0;
+    const social = this.props.authUser.social.instagram;
+    const cost = this.state.campaign.cost;
+
+    return (
+      cost.cpc * social.engagement +
+      cost.cpi * social.impressions +
+      cost.cpv * social.reach
+    );
   };
 
   render() {
@@ -78,30 +68,50 @@ class FormPage extends Component {
           <MDBInput
             label="Campaign Name"
             value={this.state.campaign.name}
-            onChange={this.onChange}
             id="name"
+            disabled
           />
           <MDBInput
             label="Campaign Brief"
-            value={this.state.campaign.contactname}
-            onChange={this.onChange}
+            value={this.state.campaign.brief}
             id="contactname"
+            disabled
           />
-          <MDBSelect label="Category" options={ENUMS.category} />
-          <MDBSelect label="Purpose" options={ENUMS.purpose} />
+          <MDBSelect
+            label="Category"
+            options={ENUMS.category}
+            value={this.state.campaign.category}
+            disabled
+          />
+          <MDBSelect
+            label="Purpose"
+            options={ENUMS.purpose}
+            value={this.state.campaign.purpose}
+            disabled
+          />
           <MDBRow around>
             <MDBDatePicker
               label="Start Date"
-              getValue={(v) => this.setDate("startdate", v)}
+              value={this.state.campaign.startdate}
+              disabled
             />
             <MDBDatePicker
               label="End Date"
-              getValue={(v) => this.setDate("enddate", v)}
+              value={this.state.campaign.enddate}
+              disabled
             />
           </MDBRow>
-          <MDBInput label="hashtags" />
-          <MDBInput label="link" />
-          <MDBFileInput label="Campaign Media" />
+          <MDBInput
+            label="hashtags"
+            value={this.state.campaign.hashtags}
+            disabled
+          />
+          <MDBInput label="link" value={this.state.campaign.link} disabled />
+          <MDBRow around>
+            <h5>Your Potential Earnings</h5>
+            <h3>{this.getEarnings()}</h3>
+          </MDBRow>
+          <MDBBtn onClick={this.onApply}>Apply</MDBBtn>
         </MDBContainer>
       );
   }

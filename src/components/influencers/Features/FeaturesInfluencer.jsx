@@ -18,12 +18,12 @@ const FeaturesInfluencer = () => {
           />
         </MDBCol>
         <MDBCol lg="7">
-          <MDBRow className="mb-3">
+          <MDBRow className="my-3">
             <MDBCol size="1">
               <MDBIcon icon="share" size="lg" className="indigo-text" />
             </MDBCol>
             <MDBCol xl="10" md="11" size="10">
-              <h5 className="font-weight-bold mb-3">Sign UP</h5>
+              <h5 className="font-weight-bold mb-3">Sign Up</h5>
               <p className="black-text">
                 Share basic details to create your profile, share social media
                 handles and we will pick you for the campaign that fits your
@@ -31,7 +31,7 @@ const FeaturesInfluencer = () => {
               </p>
             </MDBCol>
           </MDBRow>
-          <MDBRow className="mb-3">
+          <MDBRow className="my-3">
             <MDBCol size="1">
               <MDBIcon icon="share" size="lg" className="indigo-text" />
             </MDBCol>
@@ -43,7 +43,7 @@ const FeaturesInfluencer = () => {
               </p>
             </MDBCol>
           </MDBRow>
-          <MDBRow className="mb-3">
+          <MDBRow className="my-3">
             <MDBCol size="1">
               <MDBIcon icon="share" size="lg" className="indigo-text" />
             </MDBCol>

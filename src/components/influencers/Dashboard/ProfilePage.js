@@ -20,10 +20,8 @@ import { withAuthorization } from "../../common/Session";
 const ProfilePage = (props) => {
   const [platform, setPlatform] = useState(0);
   const [user, setUser] = useState(null);
-  const social = exampleUser.social;
 
   useEffect(() => {
-    console.log(props.authUser);
     setUser(props.authUser);
   }, []);
 
@@ -59,7 +57,7 @@ const ProfilePage = (props) => {
                   disabled
                 />
 
-                {platform == 0 && social.instagram ? (
+                {platform == 0 && user.social.instagram ? (
                   <>
                     <div className="text-left">
                       <span>
@@ -72,7 +70,7 @@ const ProfilePage = (props) => {
                           <MDBCard className="p-2 z-depth-2 m-2">
                             <MDBCardTitle>Followers</MDBCardTitle>
                             <MDBCardBody>
-                              <h2>{social.instagram.followers}</h2>
+                              <h2>{user.social.instagram.followers}</h2>
                             </MDBCardBody>
                           </MDBCard>
                         </MDBCol>
@@ -80,7 +78,7 @@ const ProfilePage = (props) => {
                           <MDBCard className="p-2 z-depth-2 m-2">
                             <MDBCardTitle>Posts</MDBCardTitle>
                             <MDBCardBody>
-                              <h2>{social.instagram.posts}</h2>
+                              <h2>{user.social.instagram.posts}</h2>
                             </MDBCardBody>
                           </MDBCard>
                         </MDBCol>
@@ -90,7 +88,7 @@ const ProfilePage = (props) => {
                           <MDBCard className="p-2 z-depth-2 m-2">
                             <MDBCardTitle>Reach</MDBCardTitle>
                             <MDBCardBody>
-                              <h2>{social.instagram.reach}</h2>
+                              <h2>{user.social.instagram.reach}</h2>
                             </MDBCardBody>
                           </MDBCard>
                         </MDBCol>
@@ -98,7 +96,7 @@ const ProfilePage = (props) => {
                           <MDBCard className="p-2 z-depth-2 m-2">
                             <MDBCardTitle>Engagement rate</MDBCardTitle>
                             <MDBCardBody>
-                              <h2>{social.instagram.engagement}</h2>
+                              <h2>{user.social.instagram.engagement}</h2>
                             </MDBCardBody>
                           </MDBCard>
                         </MDBCol>
@@ -106,40 +104,40 @@ const ProfilePage = (props) => {
                     </section>
                   </>
                 ) : null}
-                {platform == 1 && social.youtube ? (
+                {platform == 1 && user.social.youtube ? (
                   <section id="youtube">
-                    <p>Total Followers: {social.instagram.followers} </p>
-                    <p>Total Posts: {social.instagram.posts}</p>
-                    <p>Average Reach per post:{social.instagram.reach} </p>
+                    <p>Total Followers: {user.social.instagram.followers} </p>
+                    <p>Total Posts: {user.social.instagram.posts}</p>
+                    <p>Average Reach per post:{user.social.instagram.reach} </p>
                     <p>
                       Avgerage Impressions per post:
-                      {social.instagram.impressions}{" "}
+                      {user.social.instagram.impressions}{" "}
                     </p>
-                    <p>Engagement Rate: {social.instagram.engagement} </p>
+                    <p>Engagement Rate: {user.social.instagram.engagement} </p>
                   </section>
                 ) : null}
-                {platform == 2 && social.twitter ? (
+                {platform == 2 && user.social.twitter ? (
                   <section id="instagram">
-                    <p>Total Followers: {social.instagram.followers} </p>
-                    <p>Total Posts: {social.instagram.posts}</p>
-                    <p>Average Reach per post:{social.instagram.reach} </p>
+                    <p>Total Followers: {user.social.instagram.followers} </p>
+                    <p>Total Posts: {user.social.instagram.posts}</p>
+                    <p>Average Reach per post:{user.social.instagram.reach} </p>
                     <p>
                       Avgerage Impressions per post:
-                      {social.instagram.impressions}{" "}
+                      {user.social.instagram.impressions}{" "}
                     </p>
-                    <p>Engagement Rate: {social.instagram.engagement} </p>
+                    <p>Engagement Rate: {user.social.instagram.engagement} </p>
                   </section>
                 ) : null}
-                {platform == 3 && social.facebook ? (
+                {platform == 3 && user.social.facebook ? (
                   <section id="instagram">
-                    <p>Total Followers: {social.instagram.followers} </p>
-                    <p>Total Posts: {social.instagram.posts}</p>
-                    <p>Average Reach per post:{social.instagram.reach} </p>
+                    <p>Total Followers: {user.social.instagram.followers} </p>
+                    <p>Total Posts: {user.social.instagram.posts}</p>
+                    <p>Average Reach per post:{user.social.instagram.reach} </p>
                     <p>
                       Avgerage Impressions per post:
-                      {social.instagram.impressions}{" "}
+                      {user.social.instagram.impressions}{" "}
                     </p>
-                    <p>Engagement Rate: {social.instagram.engagement} </p>
+                    <p>Engagement Rate: {user.social.instagram.engagement} </p>
                   </section>
                 ) : null}
               </div>

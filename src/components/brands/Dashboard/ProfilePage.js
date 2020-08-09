@@ -12,7 +12,6 @@ import {
   MDBBox,
   MDBView,
 } from "mdbreact";
-import * as exampleUser from "../../../data/influencer.json";
 import * as enums from "../../../constants/enums";
 import Loader from "../../common/Loader/Spinner";
 import { withAuthorization } from "../../common/Session";
@@ -20,7 +19,6 @@ import { withAuthorization } from "../../common/Session";
 const ProfilePage = (props) => {
   const [platform, setPlatform] = useState(0);
   const [user, setUser] = useState(null);
-  const social = exampleUser.social;
 
   useEffect(() => {
     console.log(props.authUser);

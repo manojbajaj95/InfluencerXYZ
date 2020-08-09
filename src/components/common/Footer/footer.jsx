@@ -8,23 +8,14 @@ const FooterPagePro = () => {
         <MDBRow>
           <MDBCol md="12" className="py-5">
             <div className="mb-5 flex-center">
-              <a className="fb-ic">
+              <a className="fb-ic" href="https://facebook.com/influence_away">
                 <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
               </a>
-              <a className="tw-ic">
-                <i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-              </a>
-              <a className="gplus-ic">
-                <i className="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-              </a>
-              <a className="li-ic">
+              <a className="li-ic" href="https://linkedin.com/influence_away">
                 <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
               </a>
-              <a className="ins-ic">
+              <a className="ins-ic" href="https://instagram.com/influence_away">
                 <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-              </a>
-              <a className="pin-ic">
-                <i className="fab fa-pinterest fa-lg white-text fa-2x"> </i>
               </a>
             </div>
           </MDBCol>

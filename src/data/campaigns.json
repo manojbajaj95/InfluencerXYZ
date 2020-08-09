@@ -1,0 +1,100 @@
+{
+  "aaaabbbbcc": {
+    "uid": "lslsls",
+    "name": "Poqet Awareness ",
+    "brief": "Increase awareness towards financial planning",
+    "target": {
+      "platform": "youtube",
+      "minage": 25,
+      "maxage": 25,
+      "geography": "metros",
+      "sex": " male"
+    },
+    "category": 0,
+    "purpose": 0,
+    "startdate": "2020-07-20",
+    "enddate": "2020-08-20",
+    "goal": {
+      "reach": 200,
+      "impression": 250,
+      "engagement": 12,
+      "clicks": 60,
+      "conversions": 10
+    },
+    "cost": {
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2,
+      "budget": 50000
+    },
+    "hashtags": "freelancing,freelancers,value",
+    "link": "https://app.poqet.in",
+    "status": 0
+  },
+
+  "bcaselsla": {
+    "uid": "lslsls",
+    "name": "Campaign Example 2",
+    "brief": "Increase sales for poqet",
+    "target": {
+      "platform": "youtube",
+      "minage": 25,
+      "maxage": 25,
+      "geography": "metros",
+      "sex": " male"
+    },
+    "category": 0,
+    "purpose": 0,
+    "startdate": "2020-07-20",
+    "enddate": "2020-08-20",
+    "goal": {
+      "reach": 200,
+      "impression": 250,
+      "engagement": 12,
+      "clicks": 60,
+      "conversions": 10
+    },
+    "cost": {
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2,
+      "budget": 50000
+    },
+    "hashtags": "freelancing,freelancers,value",
+    "link": "https://app.poqet.in",
+    "status": 1
+  },
+
+  "abcd": {
+    "uid": "lslsls",
+    "name": "Campaign Example 3",
+    "brief": "My campaign for selling used condoms",
+    "target": {
+      "platform": "youtube",
+      "minage": 25,
+      "maxage": 25,
+      "geography": "metros",
+      "sex": " male"
+    },
+    "category": 0,
+    "purpose": 0,
+    "startdate": "2020-07-20",
+    "enddate": "2020-08-20",
+    "goal": {
+      "reach": 200,
+      "impression": 250,
+      "engagement": 12,
+      "clicks": 60,
+      "conversions": 10
+    },
+    "cost": {
+      "cpc": 0.5,
+      "cpi": 0.04,
+      "cpv": 2,
+      "budget": 50000
+    },
+    "status": 2,
+    "hashtags": "freelancing,freelancers,value",
+    "link": "https://app.poqet.in"
+  }
+}

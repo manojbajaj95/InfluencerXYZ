@@ -20,6 +20,16 @@ import Loader from "../../common/Loader/Spinner";
 import { withAuthorization } from "../../common/Session";
 import * as ENUMS from "../../../constants/enums";
 
+export const dictToList = (dict) => {
+  var list = [];
+  for (var key in dict) {
+    if (dict.hasOwnProperty(key)) {
+      list.push({ id: key, ...dict[key] });
+    }
+  }
+  return list;
+};
+
 const CampaignShort = (props) => {
   const campaign = props.campaign;
   return (
@@ -32,7 +42,7 @@ const CampaignShort = (props) => {
           <MDBNavLink to={`/influencers/campaign/view/${campaign.id}`}>
             <MDBBtn>View Details</MDBBtn>
           </MDBNavLink>
-          <MDBBtn>Apply</MDBBtn>
+          <MDBBtn onClick={props.onApply}>Apply</MDBBtn>
         </MDBRow>
       </MDBCardBody>
     </MDBCard>
@@ -46,25 +56,33 @@ class List extends Component {
   };
 
   componentDidMount = () => {
-    this.props.firebase.getFromDB("campaigns").then((result) => {
-      console.log(result);
-      this.setState({
-        campaigns: result,
-        loaded: true,
-      });
+    const allCampaigns = this.props.campaigns.fetchAndUpdate();
+    this.setState({
+      campaigns: dictToList(allCampaigns).filter((campaign) => {
+        return campaign.status === 2;
+      }),
+      loaded: true,
     });
   };
 
+  onApply = () => {
+    alert("Your application is submitted.");
+  };
+
   render() {
+    console.log(this.state);
     if (!this.state.loaded) return <Loader />;
     else
       return (
-        <MDBContainer className="mt-5 text-left">
+        <MDBContainer
+          className="mt-5 text-left"
+          style={{ "min-height": "100vh" }}
+        >
           <h2 className="text-center font-weight-bold pt-4 pb-5 mb-2">
             <strong>Campaign List</strong>
           </h2>
           {this.state.campaigns.map((data, index) => {
-            return <CampaignShort campaign={data} />;
+            return <CampaignShort campaign={data} onApply={this.onApply} />;
           })}
         </MDBContainer>
       );

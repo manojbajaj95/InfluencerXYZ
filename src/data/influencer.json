@@ -1,6 +1,6 @@
 {
   "uid": "asdfg",
-  "name": "Ipsha",
+  "name": "Ipssha",
   "email": "ipsha@abc.com",
   "country": "IN",
   "mobile": 9876543210,
@@ -28,28 +28,20 @@
   },
   "campaigns": [
     {
-      "id": "axds",
-      "name": "My Example Campaign",
-      "reach": 200,
-      "impression": 250,
+      "id": "aaaabbbbcc",
+      "reach": 100,
+      "impression": 150,
       "engagement": 12,
       "clicks": 60,
-      "conversions": 10,
-      "cpi": 0.04,
-      "cpc": 0.5,
-      "cpv": 2
+      "conversions": 10
     },
     {
-      "id": "axdq",
-      "name": "Useless Campaign",
+      "id": "bcaselsla",
       "reach": 200,
       "impression": 250,
       "engagement": 12,
       "clicks": 60,
-      "conversions": 10,
-      "cpc": 0.5,
-      "cpi": 0.04,
-      "cpv": 2
+      "conversions": 10
     }
   ]
 }
