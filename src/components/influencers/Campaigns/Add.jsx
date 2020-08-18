@@ -11,6 +11,7 @@ import {
   MDBCollapseHeader,
   MDBCollapse,
   MDBFileInput,
+  MDBAlert,
 } from "mdbreact";
 import Loader from "../../common/Loader/Spinner";
 import { withAuthorization } from "../../common/Session";
@@ -107,10 +108,9 @@ class FormPage extends Component {
             disabled
           />
           <MDBInput label="link" value={this.state.campaign.link} disabled />
-          <MDBRow around>
-            <h5>Your Potential Earnings</h5>
-            <h3>{this.getEarnings()}</h3>
-          </MDBRow>
+          <MDBAlert color="success">
+            <h2>Potential Earnings ₹{this.getEarnings()}</h2>
+          </MDBAlert>
           <MDBBtn onClick={this.onApply}>Apply</MDBBtn>
         </MDBContainer>
       );

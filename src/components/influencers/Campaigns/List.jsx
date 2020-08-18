@@ -33,7 +33,7 @@ export const dictToList = (dict) => {
 const CampaignShort = (props) => {
   const campaign = props.campaign;
   return (
-    <MDBCard>
+    <MDBCard className="mt-2">
       <MDBCardBody>
         <MDBRow between>
           <h3>{campaign.name}</h3>

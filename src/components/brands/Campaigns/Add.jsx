@@ -25,26 +25,10 @@ class FormPage extends Component {
 
   componentDidMount = () => {
     const id = this.props.match.params.id;
-    if (id) {
-      this.props.firebase.db
-        .collection("campaigns")
-        .doc(id)
-        .get()
-        .then((doc) => {
-          if (doc.exists) {
-            this.setState({
-              campaign: {
-                ...doc.data(),
-              },
-            });
-          } else {
-            // Probably a new user or db connectivity down
-            // ignore
-          }
-        });
-    }
+    const campaign = this.props.campaigns.fetchAndUpdate(id);
     this.setState({
       loaded: true,
+      campaign,
     });
   };
 

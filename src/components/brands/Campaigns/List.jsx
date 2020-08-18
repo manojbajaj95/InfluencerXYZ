@@ -20,10 +20,20 @@ import Loader from "../../common/Loader/Spinner";
 import { withAuthorization } from "../../common/Session";
 import * as ENUMS from "../../../constants/enums";
 
+const dictToList = (dict) => {
+  var list = [];
+  for (var key in dict) {
+    if (dict.hasOwnProperty(key)) {
+      list.push({ id: key, ...dict[key] });
+    }
+  }
+  return list;
+};
+
 const CampaignShort = (props) => {
   const campaign = props.campaign;
   return (
-    <MDBCard>
+    <MDBCard className="mt-2">
       <MDBCardBody>
         <MDBRow between>
           <p>{campaign.name}</p>
@@ -39,19 +49,31 @@ const CampaignShort = (props) => {
 class FormPage extends Component {
   state = {
     loaded: false,
-    campaigns: [],
+    campaigns: {
+      past: [],
+      active: [],
+      upcoming: [],
+    },
   };
 
   componentDidMount = () => {
-    this.props.firebase
-      .getFromDB("campaigns", this.props.authUser.uid)
-      .then((result) => {
-        console.log(result);
-        this.setState({
-          campaigns: result,
-          loaded: true,
-        });
-      });
+    const allCampaigns = this.props.campaigns.fetchAndUpdate();
+    this.setState({
+      campaigns: {
+        upcoming: dictToList(allCampaigns).filter((campaign) => {
+          return campaign.status === 2;
+        }),
+
+        active: dictToList(allCampaigns).filter((campaign) => {
+          return campaign.status === 1;
+        }),
+        past: dictToList(allCampaigns).filter((campaign) => {
+          return campaign.status === 0;
+        }),
+      },
+      loaded: true,
+      collapse: 1,
+    });
   };
 
   render() {
@@ -59,12 +81,75 @@ class FormPage extends Component {
     else
       return (
         <MDBContainer className="mt-5 text-left">
-          <h2 className="text-center font-weight-bold pt-4 pb-5 mb-2">
+          <h2 className="text-center font-weight-bold py-5 my-2">
             <strong>Campaign List</strong>
           </h2>
-          {this.state.campaigns.map((data, index) => {
-            return <CampaignShort campaign={data} />;
-          })}
+          <MDBCollapseHeader
+            onClick={() => {
+              this.setState({
+                collapse: 1,
+              });
+            }}
+            className="white-text"
+          >
+            Active Campaigns{" "}
+            <i
+              className={
+                this.state.collapse === 1
+                  ? "fa fa-angle-down rotate-icon"
+                  : "fa fa-angle-down"
+              }
+            />
+          </MDBCollapseHeader>
+          <MDBCollapse id="collabse3" isOpen={this.state.collapse === 1}>
+            {this.state.campaigns.active.map((data, index) => {
+              return <CampaignShort campaign={data} />;
+            })}
+          </MDBCollapse>
+          <MDBCollapseHeader
+            onClick={() => {
+              this.setState({
+                collapse: 2,
+              });
+            }}
+            className="white-text"
+          >
+            Upcoming Campaigns{" "}
+            <i
+              className={
+                this.state.collapse === 2
+                  ? "fa fa-angle-down rotate-icon"
+                  : "fa fa-angle-down"
+              }
+            />
+          </MDBCollapseHeader>
+          <MDBCollapse id="collabse3" isOpen={this.state.collapse === 2}>
+            {this.state.campaigns.upcoming.map((data, index) => {
+              return <CampaignShort campaign={data} />;
+            })}
+          </MDBCollapse>
+          <MDBCollapseHeader
+            onClick={() => {
+              this.setState({
+                collapse: 3,
+              });
+            }}
+            className="white-text"
+          >
+            Past Campaigns{" "}
+            <i
+              className={
+                this.state.collapse === 3
+                  ? "fa fa-angle-down rotate-icon"
+                  : "fa fa-angle-down"
+              }
+            />
+          </MDBCollapseHeader>
+          <MDBCollapse id="collabse3" isOpen={this.state.collapse === 3}>
+            {this.state.campaigns.past.map((data, index) => {
+              return <CampaignShort campaign={data} />;
+            })}
+          </MDBCollapse>
         </MDBContainer>
       );
   }
